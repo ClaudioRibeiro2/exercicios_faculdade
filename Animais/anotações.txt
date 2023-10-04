@@ -1,0 +1,15 @@
+POLIMORFISMO: 
+  - Chamar um método de uma super classe, e sobrescrever ele na sub-classe. Só é feito
+    em herança.
+
+Classes e Métodos Abstratos:
+    - Não permite instaciamento desta classe em questão.
+    - Utilizado para estabelcer uma estrutura.
+    - Toda vez que uma sub-classe herda de uma classe abtrata, um método abstrato
+      é obrigatório ter este método na sub-classe.
+
+INTERFACE:
+    - É tudo que é publico em uma classe.
+    - Uma classe totalmente abstrata.
+    - Implements pode ter junto extends(herança).
+    - 

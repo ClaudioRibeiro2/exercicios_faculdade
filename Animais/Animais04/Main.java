@@ -5,7 +5,6 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Simulador de Animais\n");
 
-//lista de animais nome_var  qtde de inst
         Animal[] animais = new Animal[3];
         animais[0] = new FalcaoPeregrino();
         animais[1] = new Guepardo();

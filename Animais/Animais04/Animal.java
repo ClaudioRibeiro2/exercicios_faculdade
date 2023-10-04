@@ -1,4 +1,4 @@
-public class Animal {
+public abstract class Animal {
     // Atributos
     private double metrosPercorridos;
     // Get & Set
@@ -13,5 +13,5 @@ public class Animal {
         this.metrosPercorridos += m;
         return this.metrosPercorridos;
     }
-    public void mover(int segundos){} // Método vazio
+    public abstract void mover(int segundos); // Método abstrato
 } // Fim da classe Animal
