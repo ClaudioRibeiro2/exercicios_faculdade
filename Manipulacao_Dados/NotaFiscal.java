@@ -3,48 +3,62 @@ import java.util.Random;
 
 public class NotaFiscal {
     // Atributos
-    Random r = new Random();
-    private ArrayList<Produto> produtos;
     private int numeroNf;
     private int qtdeProdutos;
+    private ArrayList<Produto> produtos;
+    private double totalNf;
     // Construtor
-    public NotaFiscal (int numeroNf,int qtdeProdutos){
-        this.numeroNf = numeroNf;
-        this.qtdeProdutos = qtdeProdutos;
-        this.produtos = new ArrayList();
-    }
-    // Getter's
-    public ArrayList<Produto> getProdutos() {
-        return this.produtos;
-    }
-    public int getNumeroNf(){
-        return this.numeroNf;
-    }
-    public int getQtdeProdutos(){
-        return this.qtdeProdutos;
-    }
-    // Setter's
-    public void setProdutos(ArrayList<Produto> produtos) {
-        this.produtos = produtos;
-    }
-
-    public void setNumeroNf(int numeroNf) {
-        this.numeroNf = numeroNf;
-    }
-
-    public void setQtdeProdutos(int qtdeProdutos) {
-        this.qtdeProdutos = qtdeProdutos;
+    public NotaFiscal(int numeroNf, int qtdeProdutos) {
+        setNumeroNf(numeroNf);
+        setQtdeProdutos(qtdeProdutos);
+        setProdutos(new ArrayList<>());
     }
     // Métodos
-    public void adicionarProduto(Produto produto){
-        produtos.add(produto);
+    public void addProdutos(Produto newValue){
+        produtos.add(newValue);
     }
-    // toString()
+    public void generateProdutos(int id, int qtde, double precoUn){
+            Produto produto = new Produto(id, qtde, precoUn);
+            addProdutos(produto);
+            double agregador = produto.getPrecoTotal();
+            setTotalNf(agregador);
+    }
+    // Getter's & Setter's
+    public int getNumeroNf() {
+        return numeroNf;
+    }
+    public void setNumeroNf(int newValue) {
+        this.numeroNf = newValue;
+    }
+
+    public int getQtdeProdutos() {
+        return qtdeProdutos;
+    }
+    public void setQtdeProdutos(int newValue) {
+        this.qtdeProdutos = newValue;
+    }
+
+    public ArrayList<Produto> getProdutos() {
+        return produtos;
+    }
+    public void setProdutos(ArrayList<Produto> newValue) {
+        this.produtos = newValue;
+    }
+
+    public double getTotalNf() {
+        return totalNf;
+    }
+    public void setTotalNf(double newValue) {
+        this.totalNf += newValue;
+    }
+    // toString
     @Override
     public String toString() {
         return String.format(
-	       "NF-e: %d%n\tQTDE PRODUTOS: %d%n\t",
-	       getNumeroNf(),
-           getQtdeProdutos());
+                "NotaFiscal {%n%s %d,%n%s %d,%n%s R$ %.2f,%n%s %s%n}",
+                "numeroNf=", getNumeroNf(),
+                "qtdeProdutos=", getQtdeProdutos(),
+                "totalNf", getTotalNf(),
+                "produtos=", getProdutos());
     }
 } // Fim da classe NotaFiscal

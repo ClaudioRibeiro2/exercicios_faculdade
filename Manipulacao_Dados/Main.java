@@ -4,9 +4,18 @@ public class Main {
     public static void main(String[] args) {
         // Atributos
         Random r = new Random();
-        Produto a = new Produto(r.nextLong(100),
-                                r.nextInt(11+1),
-                                r.nextDouble(51+1));
-        System.out.println(a);
+//        NotaFiscal notaFiscal = new NotaFiscal(r.nextInt(999) + 1,
+//                                            r.nextInt(4) + 1);
+//        int counter = notaFiscal.getQtdeProdutos();
+//        for (int i = 0; i < counter; i++){
+//            notaFiscal.generateProdutos(
+//                    r.nextInt(999) + 1,
+//                    r.nextInt(4) + 1,
+//                    r.nextDouble(51) + 0.001
+//            );
+//        }
+//        System.out.println(notaFiscal);
+        //Armazenar a = new Armazenar("batata");
+        //a.criarArquivo();
     }
 } // Fim da classe Main

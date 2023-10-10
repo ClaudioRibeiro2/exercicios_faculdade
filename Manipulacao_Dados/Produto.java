@@ -5,51 +5,49 @@ public class Produto {
     private double precoUn;
     private double precoTotal;
     // Construtor
-    public Produto (long id, int qtde, double precoUn){
+    public Produto(long id, int qtde, double precoUn) {
         setId(id);
         setQtde(qtde);
         setPrecoUn(precoUn);
-        this.precoTotal = getPrecoTotal();
-    }
-    // Getter's
-    public long getId(){
-        return this.id;
-    }
-    public int getQtde(){
-        return this.qtde;
-    }
-    public double getPrecoUn(){
-        return this.precoUn;
-    }
-    public double getPrecoTotal(){
-        return this.precoTotal;
-    }
-    // Setter's
-    public void setId(long newValue){
-        this.id = newValue;
-    }
-    public void setQtde(int newValue){
-        this.qtde = newValue;
-    }
-    public void setPrecoUn(double newValue){
-        this.precoUn = newValue;
-    }
-    public void setPrecoTotal(double newValue) {
-        this.precoTotal = newValue;
+        setPrecoTotal(qtde * precoUn);
     }
     // Métodos
-    public void calcPrecoTotal (){
-        double calc = getQtde() * getPrecoUn();
-        setPrecoTotal(calc);
+
+    // Getter's & Setter's
+    public long getId() {
+        return id;
     }
-    // toString()
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public int getQtde() {
+        return qtde;
+    }
+    public void setQtde(int qtde) {
+        this.qtde = qtde;
+    }
+
+    public double getPrecoUn() {
+        return precoUn;
+    }
+    public void setPrecoUn(double precoUn) {
+        this.precoUn = precoUn;
+    }
+
+    public double getPrecoTotal() {
+        return precoTotal;
+    }
+    public void setPrecoTotal(double precoTotal) {
+        this.precoTotal = precoTotal;
+    }
     @Override
     public String toString() {
         return String.format(
-	       "%n\t%s: %d\t%s: %d\t%s: %.2f\t%s: %.2f%n",
-	       "id", getId(),
-	       "qtde", getQtde(),
-	       "preco unitario", getPrecoUn(), 
-           "total", getPrecoTotal());
+                "%n\tProduto{%s %d, %s %d, %s R$ %.2f, %s R$ %.2f}",
+                "id=", getId(),
+                "qtde=", getQtde(),
+                "precoUn=", getPrecoUn(),
+                "precoTotal=", getPrecoTotal());
     }
 } // Fim da classe Produto

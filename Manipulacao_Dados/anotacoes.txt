@@ -1,6 +1,6 @@
 SEMPRE FAZER ANTES:
     - DEFINIR ATRIBUTOS
-    - GETTER'S SETTER'S
+    - GETTERS & SETTERS
     - CONSTRUTOR;
     - adicionar dados só no main
 Nota Fiscal
