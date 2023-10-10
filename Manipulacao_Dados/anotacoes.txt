@@ -1,0 +1,19 @@
+SEMPRE FAZER ANTES:
+    - DEFINIR ATRIBUTOS
+    - GETTER'S SETTER'S
+    - CONSTRUTOR;
+    - adicionar dados só no main
+Nota Fiscal
+	PRODUTO
+	- ID
+	- QTDE
+	- PRECO_UN
+	- PRECO TOTAL
+TOTAL_NF
+Aplicação:
+- Armazenar em disco (polimorfismo)
+	- csv
+	- tabular(\t).txt
+
+import file, scanner
+	- OutputStream - FileOutPutStream
