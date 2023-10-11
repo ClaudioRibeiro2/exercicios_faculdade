@@ -11,8 +11,6 @@ public class Produto {
         setPrecoUn(precoUn);
         setPrecoTotal(qtde * precoUn);
     }
-    // Métodos
-
     // Getter's & Setter's
     public long getId() {
         return id;
@@ -44,7 +42,7 @@ public class Produto {
     @Override
     public String toString() {
         return String.format(
-                "%n\tProduto{%s %d, %s %d, %s R$ %.2f, %s R$ %.2f}",
+                "%n\t%s %d, %s %d, %s R$ %.2f, %s R$ %.2f",
                 "id=", getId(),
                 "qtde=", getQtde(),
                 "precoUn=", getPrecoUn(),

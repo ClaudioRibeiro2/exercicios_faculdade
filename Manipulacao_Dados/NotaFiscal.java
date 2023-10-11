@@ -4,22 +4,20 @@ import java.util.Random;
 public class NotaFiscal {
     // Atributos
     private int numeroNf;
-    private int qtdeProdutos;
     private ArrayList<Produto> produtos;
     private double totalNf;
     // Construtor
-    public NotaFiscal(int numeroNf, int qtdeProdutos) {
+    public NotaFiscal(int numeroNf) {
         setNumeroNf(numeroNf);
-        setQtdeProdutos(qtdeProdutos);
         setProdutos(new ArrayList<>());
     }
     // Métodos
-    public void addProdutos(Produto newValue){
+    public void adicionarProdutos(Produto newValue){
         produtos.add(newValue);
     }
-    public void generateProdutos(int id, int qtde, double precoUn){
+    public void inserirProdutos(int id, int qtde, double precoUn){
             Produto produto = new Produto(id, qtde, precoUn);
-            addProdutos(produto);
+            adicionarProdutos(produto);
             double agregador = produto.getPrecoTotal();
             setTotalNf(agregador);
     }
@@ -29,13 +27,6 @@ public class NotaFiscal {
     }
     public void setNumeroNf(int newValue) {
         this.numeroNf = newValue;
-    }
-
-    public int getQtdeProdutos() {
-        return qtdeProdutos;
-    }
-    public void setQtdeProdutos(int newValue) {
-        this.qtdeProdutos = newValue;
     }
 
     public ArrayList<Produto> getProdutos() {
@@ -55,9 +46,8 @@ public class NotaFiscal {
     @Override
     public String toString() {
         return String.format(
-                "NotaFiscal {%n%s %d,%n%s %d,%n%s R$ %.2f,%n%s %s%n}",
+                "NotaFiscal {%s %d, %s R$ %.2f, %s %s%n}",
                 "numeroNf=", getNumeroNf(),
-                "qtdeProdutos=", getQtdeProdutos(),
                 "totalNf", getTotalNf(),
                 "produtos=", getProdutos());
     }

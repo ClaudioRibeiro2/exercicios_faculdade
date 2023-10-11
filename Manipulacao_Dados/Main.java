@@ -1,21 +1,22 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        // Atributos
         Random r = new Random();
-//        NotaFiscal notaFiscal = new NotaFiscal(r.nextInt(999) + 1,
-//                                            r.nextInt(4) + 1);
-//        int counter = notaFiscal.getQtdeProdutos();
-//        for (int i = 0; i < counter; i++){
-//            notaFiscal.generateProdutos(
-//                    r.nextInt(999) + 1,
-//                    r.nextInt(4) + 1,
-//                    r.nextDouble(51) + 0.001
-//            );
-//        }
-//        System.out.println(notaFiscal);
-        //Armazenar a = new Armazenar("batata");
-        //a.criarArquivo();
-    }
+        ArrayList<NotaFiscal> listaNF = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            NotaFiscal nota = new NotaFiscal(r.nextInt(999) + 1);
+            for (int a = 0; a < 5; a++) {
+                nota.inserirProdutos(
+                        r.nextInt(999) + 1,
+                        r.nextInt(4) + 1,
+                        r.nextDouble(51) + 0.001
+                );
+            }
+            listaNF.add(nota);
+        }
+        EscreverTabular tabular = new EscreverTabular("batata");
+        tabular.inserirNfs(listaNF);
+    } // Fim do método main
 } // Fim da classe Main
